@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<ol id="ol_task">
+    <li>сникерс</li>
+    <li>твикс</li>
+    <li>скиталс</li>
+    <li></li>
+    <li></li>
+</ol>
+<button id="button"></button>
+
+    <p id="p_task2">текст</p>
+    <button id="button_task2"> кнопка</button>
+    
+
+
+    <ol id="ol_task3">
+        <li>fdbgdfh</li>
+        <li>fdbgdfh</li>
+        <li>fdbgdfh</li>
+        <li>fdbgdfh</li>
+    </ol>
+
+    <br><br>
+<h4>задание 1</h4>
+    <p id="p_task4"></p>
+    <button id="button_task1">кнопка#1</button>
+    
+    <br><br>
+    <h4>задание 2</h4>
+
+    
+   
+
+<br><br>
+<h4>задание 3</h4>
+    <input type="button" value="YouTube" onclick='location.href="http://yt.be/"'>
+    <input type="button" value="spotify" onclick='location.href="http://spotify.com/"'>
+    <input type="button" value="yandex" onclick='location.href="http://yandex.com/"'>
+    <script>
+//1
+let button = document.getElementById("button")
+let ol_task_all = document.getElementById("ol_task").querySelectorAll("li")
+let ol_task = document.getElementById("ol_task")
+    let mass = ["марс","АльпенГольд","милка" ,"баунти","yyyy"];
+
+    button.addEventListener("click",()=> {
+        for (let i = 0; i < mass.length; i++) {
+            try {
+                ol_task_all[i].innerHTML = mass[i];
+            }
+            catch {
+                ol_task_all = document.getElementById("ol_task").querySelectorAll("il");
+                if (ol_task_all.length == mass.length) {
+                    break;
+                } else if (i - ol_task_all.length == 0) {
+                    let li_task = document.createElement("li")
+                    li_task.innerHTML = mass[i]
+                    ol_task.appendChild(li_task)
+                }
+            }
+        }
+
+    
+    })
+
+    //2
+let p_task2 = document.querySelector('#p_task2');
+let button_task2 = document.querySelector('#button_task2');
+let span = document.createElement("span")
+span = "!!!"
+button_task2.addEventListener('click', function (){
+    p_task2.innerHTML = span + p_task2.innerHTML + span
+});
+
+//3
+
+let ol_task3 = document.getElementById("ol_task3")
+
+ol_task3.addEventListener('mouseover',function () {
+    ol_task3.lastElementChild.style.color = "red";
+})
+
+//№1
+let button_task1 = document.querySelector("#button_task1")
+const p_task4 = document.querySelector("#p_task4")
+button_task1.addEventListener("click", () => {
+p_task4.innerHTML =
+"ширина окна браузера " + window.innerWidth + "<br>" + "высота окна браузера " + window.innerHeight 
+alert(window.screen.availHeight);
+
+});
+
+const windowInnerWidth = document.documentElement.clientWidth;
+if (windowInnerWidth<1000){
+    document.body.style.backgroundColor = "#008000";
+}
+if (windowInnerWidth>1000){
+    document.body.style.backgroundColor = "#AA0000";
+}
+
+
+
+
+buttonts.addEventListener('click',()=> window.confirm('каков ваш возраст') )
+
+
+
+    </script>
+
+
+</body>
+</html>
